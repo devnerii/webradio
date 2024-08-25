@@ -12,7 +12,7 @@ const BannerRotativo: React.FC = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    adaptiveHeight: true,
+    adaptiveHeight: false, // Mantém a altura consistente
     arrows: true
   };
 
@@ -35,11 +35,12 @@ const BannerRotativo: React.FC = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <Slider {...settings}>
         {banners.map((banner) => (
           <div key={banner.id} className="w-full">
-            <div className="relative h-[100px] md:h-[200px] lg:h-[150px]">
+            {/* Ajuste de altura responsivo para diferentes tamanhos de tela */}
+            <div className="relative w-full h-[150px] sm:h-[150px] md:h-[150px] lg:h-[175px]">
               <Image
                 src={banner.imgSrc}
                 alt={banner.altText}
