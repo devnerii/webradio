@@ -23,24 +23,26 @@ const Header: React.FC = () => {
           />
         </div>
 
-        {/* Centro: Ícones Sociais e WhatsApp */}
-        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0">
+        {/* Centro: Ícones Sociais */}
+        <div className="flex flex-row items-center space-x-4 mt-4 md:mt-0">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" /> {/* Ícones maiores */}
+            <FaFacebook className="text-red-600 text-3xl hover:text-red-700" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" />
+            <FaTwitter className="text-red-600 text-3xl hover:text-red-700" />
           </a>
           <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-            <FaYoutube className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" />
+            <FaYoutube className="text-red-600 text-3xl hover:text-red-700" />
           </a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" />
+            <FaInstagram className="text-red-600 text-3xl hover:text-red-700" />
           </a>
-          <div className="flex items-center bg-green-600 rounded-full px-8 py-5 text-white">
-            <FaWhatsapp className="text-3xl mr-2" />
-            <span className="text-xl">(89) 9.9401-4470</span>
-          </div>
+        </div>
+
+        {/* WhatsApp em uma linha separada */}
+        <div className="flex items-center bg-green-600 rounded-full px-8 py-5 text-white mt-4 md:mt-0">
+          <FaWhatsapp className="text-3xl mr-2" />
+          <span className="text-xl">(89) 9.9401-4470</span>
         </div>
 
         {/* Direita: No Ar */}
