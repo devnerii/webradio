@@ -10,7 +10,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-yellow-500 text-white w-full py-4"> {/* Diminuí a altura da barra com py-2 */}
+    <nav className="bg-yellow-500 text-white w-full py-5"> {/* Diminuí a altura da barra com py-2 */}
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo ou nome à esquerda (opcional) */}
         <div className="flex-grow">
