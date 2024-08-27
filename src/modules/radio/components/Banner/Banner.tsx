@@ -15,15 +15,16 @@ const Header: React.FC = () => {
       <div className="relative container mx-auto flex flex-wrap justify-between items-center">
         
         {/* Esquerda: Logotipo */}
-        <div className="flex items-center"><img
+        <div className="flex items-center">
+          <img
             src="https://pbr-str.srvsite.com/arquivos/9321/cabecalho-9321-20240813103951.png"
             alt="Logo"
-            className="h-32 w-auto md:h-50" // Logotipo maior em telas maiores
+            className="h-48 w-auto md:h-36 sm:h-28" // Aumentei o tamanho do logotipo para telas maiores e ajustei para dispositivos móveis
           />
         </div>
 
         {/* Centro: Ícones Sociais e WhatsApp */}
-        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <FaFacebook className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" /> {/* Ícones maiores */}
           </a>
@@ -48,7 +49,7 @@ const Header: React.FC = () => {
             <img
               src="https://pbr-def.srvsite.com/img/sem_locutor2.jpg"
               alt="No Ar"
-              className="h-16 w-16 rounded-full object-cover md:h-12 md:w-12" // Imagem maior em telas maiores
+              className="h-20 w-20 rounded-full object-cover md:h-16 md:w-16" // Aumentei a imagem para telas maiores e ajustei para dispositivos móveis
             />
             <div className="ml-4">
               <h2 className="text-purple-700 text-lg font-bold">NO AR</h2>

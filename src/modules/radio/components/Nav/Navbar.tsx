@@ -10,7 +10,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-yellow-500 text-white w-full py-5"> {/* Diminuí a altura da barra com py-2 */}
+    <nav className="bg-[#ff9900] text-white w-full py-4"> {/* Alterei a cor da barra para #ff9900 */}
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo ou nome à esquerda (opcional) */}
         <div className="flex-grow">
@@ -18,7 +18,7 @@ const NavBar: React.FC = () => {
         </div>
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex space-x-2 lg:space-x-4 font-medium text-sm justify-end items-center mr-10"> {/* Diminuí o espaçamento e o tamanho das fontes */}
+        <ul className="hidden md:flex space-x-2 lg:space-x-4 font-medium text-sm justify-end items-center mr-10">
           <li className="hover:text-orange-500 transition duration-200 ease-in-out">
             <Link href="/">INÍCIO</Link>
           </li>
@@ -55,14 +55,14 @@ const NavBar: React.FC = () => {
             aria-label="Toggle Menu"
             className="text-white focus:outline-none"
           >
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />} {/* Diminuí o tamanho dos ícones */}
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
 
       {/* Dropdown Menu for Mobile */}
       {isOpen && (
-        <ul className="flex flex-col space-y-1 mt-2 md:hidden font-medium text-sm items-center"> {/* Diminuí o espaçamento e o tamanho das fontes no mobile */}
+        <ul className="flex flex-col space-y-1 mt-2 md:hidden font-medium text-sm items-center">
           <li className="hover:text-yellow-400 transition duration-200 ease-in-out">
             <Link href="/">INÍCIO</Link>
           </li>
