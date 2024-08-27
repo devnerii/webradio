@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         <div className="flex items-center"><img
             src="https://pbr-str.srvsite.com/arquivos/9321/cabecalho-9321-20240813103951.png"
             alt="Logo"
-            className="h-32 w-auto md:h-24" // Logotipo maior em telas maiores
+            className="h-32 w-auto md:h-50" // Logotipo maior em telas maiores
           />
         </div>
 
