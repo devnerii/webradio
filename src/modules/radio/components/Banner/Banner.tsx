@@ -1,10 +1,12 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Header: React.FC = () => {
   return (
     <header
-      className="relative bg-cover bg-center p-4"
+      className="relative bg-cover bg-center p-10"
       style={{ backgroundImage: "url('/radio/dj.jpg')" }} // Fundo do header
     >
       {/* Overlay escura */}
@@ -14,45 +16,46 @@ const Header: React.FC = () => {
         
         {/* Esquerda: Logotipo */}
         <div className="flex items-center">
+          // eslint-disable-next-line @next/next/no-img-element, @next/next/no-img-element, @next/next/no-img-element
           <img
             src="https://pbr-str.srvsite.com/arquivos/9321/cabecalho-9321-20240813103951.png"
             alt="Logo"
-            className="h-24 w-auto"
+            className="h-32 w-auto md:h-24" // Logotipo maior em telas maiores
           />
         </div>
 
         {/* Centro: Ícones Sociais e WhatsApp */}
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className="text-red-600 text-2xl hover:text-red-700" />
+            <FaFacebook className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" /> {/* Ícones maiores */}
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="text-red-600 text-2xl hover:text-red-700" />
+            <FaTwitter className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" />
           </a>
           <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-            <FaYoutube className="text-red-600 text-2xl hover:text-red-700" />
+            <FaYoutube className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" />
           </a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="text-red-600 text-2xl hover:text-red-700" />
+            <FaInstagram className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" />
           </a>
-          <div className="flex items-center bg-green-600 rounded-full px-3 py-1 text-white">
-            <FaWhatsapp className="text-xl mr-2" />
-            <span>(89) 9.9401-4470</span>
+          <div className="flex items-center bg-green-600 rounded-full px-4 py-2 text-white">
+            <FaWhatsapp className="text-3xl mr-2" />
+            <span className="text-lg">(89) 9.9401-4470</span>
           </div>
         </div>
 
         {/* Direita: No Ar */}
-        <div className="flex items-center">
-          <div className="flex items-center bg-white rounded-full p-2 shadow-md">
+        <div className="flex items-center mt-4 md:mt-0">
+          <div className="flex items-center bg-white rounded-full p-4 shadow-md">
             <img
               src="https://pbr-def.srvsite.com/img/sem_locutor2.jpg"
               alt="No Ar"
-              className="h-12 w-12 rounded-full object-cover"
+              className="h-16 w-16 rounded-full object-cover md:h-12 md:w-12" // Imagem maior em telas maiores
             />
-            <div className="ml-3">
-              <h2 className="text-purple-700 text-sm font-bold">NO AR</h2>
-              <p className="text-red-600 text-xs font-semibold">Programa Manhã Total 2ª Parte</p>
-              <p className="text-gray-500 text-xs">lealfm.com.br</p>
+            <div className="ml-4">
+              <h2 className="text-purple-700 text-lg font-bold">NO AR</h2>
+              <p className="text-red-600 text-sm font-semibold">Programa Manhã Total 2ª Parte</p>
+              <p className="text-gray-500 text-sm">lealfm.com.br</p>
             </div>
           </div>
         </div>
