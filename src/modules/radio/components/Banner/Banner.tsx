@@ -6,7 +6,7 @@ import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaWhatsapp } from 'react
 const Header: React.FC = () => {
   return (
     <header
-      className="relative bg-cover bg-center p-10"
+      className="relative bg-cover bg-center p-8"
       style={{ backgroundImage: "url('/radio/dj.jpg')" }} // Fundo do header
     >
       {/* Overlay escura */}
@@ -15,9 +15,7 @@ const Header: React.FC = () => {
       <div className="relative container mx-auto flex flex-wrap justify-between items-center">
         
         {/* Esquerda: Logotipo */}
-        <div className="flex items-center">
-          // eslint-disable-next-line @next/next/no-img-element, @next/next/no-img-element, @next/next/no-img-element
-          <img
+        <div className="flex items-center"><img
             src="https://pbr-str.srvsite.com/arquivos/9321/cabecalho-9321-20240813103951.png"
             alt="Logo"
             className="h-32 w-auto md:h-24" // Logotipo maior em telas maiores
