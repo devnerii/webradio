@@ -6,7 +6,7 @@ import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaWhatsapp } from 'react
 const Header: React.FC = () => {
   return (
     <header
-      className="relative bg-cover bg-center p-8"
+      className="relative bg-cover bg-center p-16"
       style={{ backgroundImage: "url('/radio/dj.jpg')" }} // Fundo do header
     >
       {/* Overlay escura */}
