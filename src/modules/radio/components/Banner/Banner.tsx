@@ -36,9 +36,9 @@ const Header: React.FC = () => {
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
             <FaInstagram className="text-red-600 text-4xl hover:text-red-700 md:text-3xl" />
           </a>
-          <div className="flex items-center bg-green-600 rounded-full px-4 py-2 text-white">
+          <div className="flex items-center bg-green-600 rounded-full px-8 py-5 text-white">
             <FaWhatsapp className="text-3xl mr-2" />
-            <span className="text-lg">(89) 9.9401-4470</span>
+            <span className="text-xl">(89) 9.9401-4470</span>
           </div>
         </div>
 

@@ -87,7 +87,7 @@ const RadioPlayerHeader: React.FC = () => {
           rel="noopener noreferrer"
           aria-label="Android"
         >
-          <AiFillAndroid size={20} className="hover:text-yellow-500 transition duration-200 ease-in-out cursor-pointer" />
+          <AiFillAndroid size={30} className="hover:text-yellow-500 transition duration-200 ease-in-out cursor-pointer" />
         </a>
         <a
           href="https://apps.apple.com/us/app/radio-fm-98-9/id123456789"
@@ -95,7 +95,7 @@ const RadioPlayerHeader: React.FC = () => {
           rel="noopener noreferrer"
           aria-label="Apple"
         >
-          <AiFillApple size={20} className="hover:text-yellow-500 transition duration-200 ease-in-out cursor-pointer" />
+          <AiFillApple size={30} className="hover:text-yellow-500 transition duration-200 ease-in-out cursor-pointer" />
         </a>
         <a
           href="https://www.microsoft.com/store/apps/9nblggh4nns1"
@@ -103,7 +103,7 @@ const RadioPlayerHeader: React.FC = () => {
           rel="noopener noreferrer"
           aria-label="Windows"
         >
-          <AiFillWindows size={20} className="hover:text-yellow-500 transition duration-200 ease-in-out cursor-pointer" />
+          <AiFillWindows size={30} className="hover:text-yellow-500 transition duration-200 ease-in-out cursor-pointer" />
         </a>
         <a
           href="https://www.facebook.com/radiofm989"
@@ -111,7 +111,7 @@ const RadioPlayerHeader: React.FC = () => {
           rel="noopener noreferrer"
           aria-label="Facebook"
         >
-          <AiFillFacebook size={20} className="hover:text-yellow-500 transition duration-200 ease-in-out cursor-pointer" />
+          <AiFillFacebook size={30} className="hover:text-yellow-500 transition duration-200 ease-in-out cursor-pointer" />
         </a>
         <a
           href="https://twitter.com/radiofm989"
