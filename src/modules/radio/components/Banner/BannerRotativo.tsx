@@ -41,11 +41,11 @@ const BannerRotativo: React.FC = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden mb-[-6px]">
+    <div className="w-full overflow-hidden mb-[-6px] relative">
       <Slider {...settings}>
         {banners.map((banner) => (
           <div key={banner.id} className="relative w-full">
-            <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[475px]">
+            <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[475px] shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">
               <Image
                 src={banner.imgSrc}
                 alt={banner.altText}
@@ -54,6 +54,9 @@ const BannerRotativo: React.FC = () => {
                 className="object-cover"
                 priority={banner.id === 1}
               />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-4">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">{banner.altText}</h2>
+              </div>
             </div>
           </div>
         ))}

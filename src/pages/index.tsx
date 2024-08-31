@@ -3,6 +3,7 @@ import RadioPlayerHeader from '../modules/radio/components/Header/RadioPlayerHea
 import BannerRotativo from '@/modules/radio/components/Banner/BannerRotativo';
 import NavBar from '@/modules/radio/components/Nav/Navbar';
 import Banner from '@/modules/radio/components/Banner/Banner'
+import LiveRadio from '@/modules/radio/components/Live/LiveRadio';
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Banner />
       <NavBar />
       <BannerRotativo />
+      <LiveRadio />
     </div>
   );
 };
