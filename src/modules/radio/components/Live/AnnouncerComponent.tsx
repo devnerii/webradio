@@ -1,63 +1,49 @@
-import React from 'react';
-import Image from 'next/image';
-import { FaMicrophone } from 'react-icons/fa'; // Ícone para melhorar a visualização
+// components/AnnouncerComponent.tsx
+import React, { useState, useEffect } from 'react';
+import { FaBroadcastTower } from 'react-icons/fa'; // Ícone para melhorar a visualização
 
-interface AnnouncerProps {
-  title: string;
-  imageUrl: string;
-  name: string;
-  description: string;
-  time: string;
-}
+const VideoComponent: React.FC = () => {
+  const [dateTime, setDateTime] = useState<string>('');
 
-const AnnouncerComponent: React.FC<AnnouncerProps> = ({ title, imageUrl, name, description, time }) => {
+  const getFormattedDateTime = () => {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    return `${day}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDateTime(getFormattedDateTime());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
-    <div className="w-full max-w-xs md:max-w-sm p-6 bg-gradient-to-br from-red-100 to-pink-100 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out h-auto md:h-96 flex flex-col justify-between md:justify-start md:space-y-4">
-      {/* Título do Componente */}
-      <div className="flex items-center text-red-700 font-bold text-lg mb-3 border-b-2 border-red-600 pb-1 md:pb-2 md:mb-4">
-        <FaMicrophone className="mr-2 text-xl md:text-2xl" /> {/* Ícone redimensionado */}
-        <span>{title}</span>
+    <div className="w-full bg-white shadow-xl rounded-md hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+      <div className="flex items-center justify-between bg-gradient-to-r from-blue-600 to-blue-400 text-white p-2 rounded-t-md shadow-md">
+        <span className="font-semibold text-lg flex items-center"><FaBroadcastTower className="mr-2"/>AO VIVO</span>
+        <span className="text-sm">{dateTime}</span>
       </div>
-
-      {/* Card de Locutor */}
-      <div className="flex items-center p-2 bg-white rounded-md shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out flex-grow">
-        <Image 
-          src={imageUrl} 
-          alt="Locutor" 
-          width={64} 
-          height={64} 
-          className="rounded-full mr-3 hover:scale-105 transition-transform duration-200 ease-in-out" 
-        />
-
-        {/* Informações do Locutor */}
-        <div className="flex flex-col space-y-1">
-          <h3 className="text-red-600 font-semibold text-xl md:text-2xl">{name}</h3>
-          <p className="text-gray-700 md:text-base">{description}</p>
-          <p className="text-gray-500 text-sm md:text-base">{time}</p>
-        </div>
+      
+      <div className="relative bg-black rounded-b-md overflow-hidden">
+        <iframe 
+          className="w-full h-80 rounded-b-md hover:scale-105 transition-transform duration-500 ease-in-out"
+          src="https://www.youtube.com/embed/X1mS3mTSpgU?si=47bA_FXAHZ_bOyOQ"
+          title="YouTube video player" 
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen 
+        ></iframe>
       </div>
     </div>
   );
 };
 
-const AnnouncerExample: React.FC = () => {
-  const exampleProps: AnnouncerProps = {
-    title: "LOCUTOR NO AR",
-    imageUrl: "https://via.placeholder.com/64",
-    name: "Administrador",
-    description: "Show da Manhã",
-    time: "05:00 - 12:00",
-  };
-
-  return (
-    <AnnouncerComponent 
-      title={exampleProps.title}
-      imageUrl={exampleProps.imageUrl}
-      name={exampleProps.name}
-      description={exampleProps.description}
-      time={exampleProps.time}
-    />
-  );
-};
-
-export default AnnouncerExample;
+export default VideoComponent;

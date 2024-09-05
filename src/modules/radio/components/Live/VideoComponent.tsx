@@ -27,7 +27,7 @@ const VideoComponent: React.FC = () => {
 
   return (
     <div className="w-full bg-white shadow-xl rounded-md hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-      <div className="flex items-center justify-between bg-gradient-to-r from-red-600 to-pink-600 text-white p-2 rounded-t-md shadow-md">
+      <div className="flex items-center justify-between bg-gradient-to-r from-blue-600 to-blue-400 text-white p-2 rounded-t-md shadow-md">
         <span className="font-semibold text-lg flex items-center"><FaBroadcastTower className="mr-2"/>AO VIVO</span>
         <span className="text-sm">{dateTime}</span>
       </div>
@@ -35,7 +35,7 @@ const VideoComponent: React.FC = () => {
       <div className="relative bg-black rounded-b-md overflow-hidden">
         <iframe 
           className="w-full h-80 rounded-b-md hover:scale-105 transition-transform duration-500 ease-in-out"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          src="https://www.youtube.com/embed/X1mS3mTSpgU?si=47bA_FXAHZ_bOyOQ"
           title="YouTube video player" 
           frameBorder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

@@ -25,8 +25,8 @@ const topSongs: Song[] = [
 
 const TopSongsComponent: React.FC = () => {
   return (
-    <div className="w-full max-w-xs md:w-full p-6 bg-gradient-to-br from-pink-100 to-red-100 rounded-lg shadow-xl flex flex-col space-y-4 max-h-96 overflow-y-scroll hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-      <h1 className="text-red-700 font-bold text-lg flex items-center"><FaMusic className="mr-2"/>As 10 Melhores Músicas</h1>
+    <div className="w-full max-w-xs md:w-full p-6 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg shadow-xl flex flex-col space-y-4 max-h-96 overflow-y-scroll hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+      <h1 className="text-blue-700 font-bold text-lg flex items-center"><FaMusic className="mr-2"/>As 10 Melhores Músicas</h1>
       {topSongs.map((song) => (
         <div key={song.position} className="flex items-center p-2 bg-white rounded-md shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out">
           <Image 
@@ -38,7 +38,7 @@ const TopSongsComponent: React.FC = () => {
           />
 
           <div>
-            <h3 className="text-red-600 font-semibold text-lg">{song.position}. {song.title}</h3>
+            <h3 className="text-blue-600 font-semibold text-lg">{song.position}. {song.title}</h3>
             <p className="text-gray-700">{song.artist}</p>
           </div>
         </div>
