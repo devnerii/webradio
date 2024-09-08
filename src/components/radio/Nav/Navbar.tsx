@@ -21,13 +21,13 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-[#ff9900] text-white w-full py-4 shadow-md">
+    <nav className="bg-[#ff9900] text-white w-full py-5 shadow-md"> {/* Aumentado o py de 4 para 5 */}
       <div className="container mx-auto flex justify-between items-center px-4">
         {/* Espaço opcional para logotipo ou nome à esquerda */}
         <div className="flex-grow"></div>
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex space-x-4 lg:space-x-6 font-medium text-sm justify-end items-center">
+        <ul className="hidden md:flex space-x-5 lg:space-x-7 font-medium text-base justify-end items-center"> {/* Aumentado o text-sm para text-base */}
           <li className="hover:text-yellow-300 transition duration-200 ease-in-out flex items-center">
             <Link href="/" className="flex items-center">
               <FaHome className="text-lg mr-2" /> <span>INÍCIO</span>
@@ -89,7 +89,7 @@ const NavBar: React.FC = () => {
 
       {/* Dropdown Menu for Mobile */}
       {isOpen && (
-        <ul className="flex flex-col space-y-2 mt-2 md:hidden bg-[#ff9900] py-4 px-6 rounded-md shadow-lg text-white">
+        <ul className="flex flex-col space-y-3 mt-3 md:hidden bg-[#ff9900] py-5 px-6 rounded-md shadow-lg text-white"> {/* Aumentado o py para 5 */}
           <li className="hover:text-yellow-300 transition duration-200 ease-in-out flex items-center">
             <Link href="/" className="flex items-center">
               <FaHome className="text-lg mr-2" /> <span>INÍCIO</span>

@@ -19,7 +19,7 @@ const BannerRotativo: React.FC = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     adaptiveHeight: false,
-    arrows: true,
+    arrows: true, // Mantém as setas padrão
   };
 
   const banners: Banner[] = [
@@ -45,7 +45,7 @@ const BannerRotativo: React.FC = () => {
       <Slider {...settings}>
         {banners.map((banner) => (
           <div key={banner.id} className="relative w-full">
-            <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[475px] shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+            <div className="relative w-full h-[500px] sm:h-[510px] md:h-[520px] lg:h-[530px] shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">
               <Image
                 src={banner.imgSrc}
                 alt={banner.altText}

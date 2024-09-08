@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-prev:before, .slick-next:before {
+    font-size: 48px; /* Aumenta o tamanho da seta */
+    color: white; /* Cor branca para melhor visibilidade */
+  }
+  
+  .slick-prev {
+    left: 10px; /* Ajusta a posição da seta esquerda */
+    z-index: 1; /* Garante que a seta fique acima do conteúdo */
+  }
+  
+  .slick-next {
+    right: 10px; /* Ajusta a posição da seta direita */
+    z-index: 1; /* Garante que a seta fique acima do conteúdo */
+    margin-right: 20px;
+  }
+  

@@ -1,15 +1,15 @@
 import React from 'react';
-import RadioPlayerHeader from '../modules/radio/components/Header/RadioPlayerHeader';
-import BannerRotativo from '@/modules/radio/components/Banner/BannerRotativo';
-import NavBar from '@/modules/radio/components/Nav/Navbar';
-import Banner from '@/modules/radio/components/Banner/Banner'
-import LiveRadio from '@/modules/radio/components/Live/LiveRadio';
-import MiddleSection from '@/modules/radio/components/Middle/MiddleSection';
-import AdBannerComponent from '@/modules/radio/components/AdBanner/AdComponentBanner';
-import VideoGalleryComponent from '@/modules/radio/components/Videos/VideoGalleryComponent';
-import AdSectionComponent from '@/modules/radio/components/Ad/AdSectionComponent';
-import PhotoGalleryComponent from '@/modules/radio/components/Images/PhotoGalleryComponent';
-import FooterComponent from '@/modules/radio/components/Footer/FooterComponent';
+import RadioPlayerHeader from '@/components/radio/Header/RadioPlayerHeader';
+import BannerRotativo from '@/components/radio/Banner/BannerRotativo';
+import NavBar from '@/components/radio/Nav/Navbar';
+import Banner from '@/components/radio/Banner/Banner'
+import LiveRadio from '@/components/radio/Live/LiveRadio';
+import MiddleSection from '@/components/radio/Middle/MiddleSection';
+import AdBannerComponent from '@/components/radio/AdBanner/AdComponentBanner';
+import VideoGalleryComponent from '@/components/radio/Videos/VideoGalleryComponent';
+import AdSectionComponent from '@/components/radio/Ad/AdSectionComponent';
+import PhotoGalleryComponent from '@/components/radio/Images/PhotoGalleryComponent';
+import FooterComponent from '@/components/radio/Footer/FooterComponent';
 
 const HomePage = () => {
   return (
