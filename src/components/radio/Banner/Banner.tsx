@@ -14,7 +14,7 @@ import {
 const Header: React.FC = () => {
   return (
     <header
-      className="relative bg-cover bg-center p-8 md:p-16 text-white"
+      className="relative bg-cover bg-center p-6 md:p-12 text-white" // Reduzi o padding
       style={{ backgroundImage: "url('/radio/dj.jpg')" }} // Fundo do header
     >
       {/* Overlay escura com efeito gradiente */}
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
           <img
             src="https://pbr-str.srvsite.com/arquivos/9321/cabecalho-9321-20240813103951.png"
             alt="Logo"
-            className="h-68 w-auto md:h-48 sm:h-28 transition-transform transform hover:scale-105 duration-300" // Adicionei efeito de escala no logotipo
+            className="h-52 w-auto md:h-40 sm:h-24 transition-transform transform hover:scale-105 duration-300" // Reduzi a altura da imagem do logotipo
           />
         </div>
 
@@ -69,9 +69,9 @@ const Header: React.FC = () => {
 
         {/* WhatsApp e Telefone */}
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0">
-          <div className="flex items-center bg-green-600 rounded-full px-8 py-5 text-white shadow-lg hover:bg-green-700 transition-colors duration-200">
+          <div className="flex items-center bg-green-600 rounded-full px-8 py-4 text-white shadow-lg hover:bg-green-700 transition-colors duration-200"> {/* Reduzi a altura do botão de WhatsApp */}
             <FaWhatsapp className="text-3xl mr-2" />
-            <span className="text-xl">(89) 9.9401-4470</span>
+            <span className="text-lg">(89) 9.9401-4470</span> {/* Reduzi o tamanho do texto */}
           </div>
         </div>
 
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
           <img
             src="https://pbr-def.srvsite.com/img/sem_locutor2.jpg"
             alt="No Ar"
-            className="h-20 w-20 rounded-full object-cover md:h-16 md:w-16 border-2 border-red-500" // Adicionei uma borda vermelha em volta da imagem
+            className="h-16 w-16 rounded-full object-cover border-2 border-red-500" // Reduzi o tamanho da imagem do locutor
           />
           <div className="ml-4 text-black">
             <h2 className="text-red-700 text-lg font-bold flex items-center">
