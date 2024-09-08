@@ -10,11 +10,18 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      colors: {
+        'custom-red': {
+          light: '#f87171',  // Light red variant
+          DEFAULT: '#ef4444', // Default red (same as bg-red-600)
+          dark: '#b91c1c',    // Darker shade if needed
+        },
       },
     },
   },
   plugins: [],
 };
+
 export default config;
