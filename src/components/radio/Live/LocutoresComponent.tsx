@@ -22,7 +22,7 @@ const LocutoresComponent: React.FC = () => {
                 alt={locutor.nome} 
                 width={80} 
                 height={80} 
-                className="rounded-full mx-auto mb-2 shadow-xl hover:scale-110 transition-transform duration-300" 
+                className="mx-auto mb-2 shadow-xl hover:scale-110 transition-transform duration-300" 
               />
               <h3 className="text-lg font-bold whitespace-nowrap">{locutor.nome}</h3>
               <p className="text-sm text-gray-200">{locutor.cargo}</p>

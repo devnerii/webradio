@@ -1,3 +1,4 @@
+// components/MiddleSection.tsx
 import React from 'react';
 import Image from 'next/image';
 import { FaPhoneAlt, FaInstagram, FaFacebookF, FaYoutube, FaTwitter } from 'react-icons/fa';
@@ -56,13 +57,12 @@ const MiddleSection = () => {
 
   return (
     <div className="w-full mx-0 px-4 py-4 space-y-8">
-      
       {/* Shared Border Container */}
-      <div className="border-4 border-red-600 text-red-600 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 mx-0">
+      <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4 mx-0 rounded-lg overflow-hidden">
         
-        {/* News Section */}
-        <div className="relative bg-white p-3 rounded-lg shadow-md overflow-hidden group md:col-span-2"> 
-          <h2 className="text-3xl font-extrabold mb-3 text-red-600 group-hover:underline group-hover:text-red-800 transition-all duration-300">Notícias</h2>
+        {/* News Section - Expanded to occupy more columns */}
+        <div className="relative bg-white p-3 shadow-md overflow-hidden group md:col-span-3 z-10 rounded-lg">
+          <h2 className="text-3xl font-extrabold mb-3 text-red-600 group-hover:underline group-hover:text-red-800 transition-all duration-300">Últimas Notícias</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mx-0 px-0"> 
             {newsItems.slice(0, 8).map((item, index) => (
               <div key={index} className="group bg-gray-100 p-2 rounded-md shadow-sm transform hover:scale-105 hover:shadow-md transition-transform duration-500 relative"> 
@@ -79,8 +79,8 @@ const MiddleSection = () => {
           </div>
         </div>
 
-        {/* Contact Section */}
-        <div className="relative bg-red-600 p-6 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center">
+        {/* Contact Section - Reduced to occupy fewer columns and slightly expanded to the left with border-radius */}
+        <div className="relative bg-gradient-to-r from-red-400 to-red-600 p-6 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 ml-[-10px] rounded-l-lg">
           <h2 className="text-3xl font-extrabold mb-4 text-white">Nosso Contato</h2>
           <p className="text-lg mb-2 text-white">Nosso Whatsapp</p>
           <p className="text-2xl font-bold mb-6 text-white">(82) 9.9911-2619</p>
