@@ -6,14 +6,14 @@ import { FaArrowRight, FaPlay } from 'react-icons/fa';
 const AdBannerComponent: React.FC = () => {
   const banners = [
     {
-      title: "Super Promoção! 50% de DESCONTO em todos os Eletrônicos",
-      description: "Oferta por tempo limitado. Aproveite e garanta seus gadgets favoritos.",
+      title: "",
+      description: "",
       imgSrc: "https://via.placeholder.com/800x400?text=An%C3%BAncio+Banner+1",
       link: "#"
     },
     {
-      title: "Viaje com Estilo - Pacotes de Férias Exclusivos",
-      description: "Explore o mundo com nossos pacotes de férias exclusivos a preços imbatíveis.",
+      title: "",
+      description: "",
       imgSrc: "https://via.placeholder.com/800x400?text=An%C3%BAncio+Banner+2",
       link: "#"
     },
@@ -25,7 +25,7 @@ const AdBannerComponent: React.FC = () => {
         {banners.map((banner, index) => (
           <div
             key={index}
-            className="relative p-10 rounded-lg shadow-2xl overflow-hidden"
+            className="relative p-10 rounded-lg shadow-2xl overflow-hidden h-80" // Altura fixa de 80
             style={{ backgroundColor: '#FFFFFF' }} // Fundo branco
           >
             <div className="absolute inset-0">
