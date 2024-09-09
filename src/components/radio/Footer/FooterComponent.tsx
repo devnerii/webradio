@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import Image from 'next/image'; // Import do Next.js para otimização de imagem
 
 const FooterComponent: React.FC = () => {
   const [visitorCount, setVisitorCount] = useState(0);
@@ -14,16 +15,6 @@ const FooterComponent: React.FC = () => {
         setOnlineUsers(data.onlineUsers);
       });
 
-    // Atualiza o número de usuários online a cada 5 segundos
-    const interval = setInterval(() => {
-      fetch('/api/stats')
-        .then((res) => res.json())
-        .then((data) => {
-          setVisitorCount(data.visitorCount);
-          setOnlineUsers(data.onlineUsers);
-        });
-    }, 5000); // Atualiza a cada 5 segundos
-
     // Remove o usuário online ao fechar a página
     const handleBeforeUnload = () => {
       fetch('/api/stats', { method: 'DELETE' });
@@ -32,7 +23,6 @@ const FooterComponent: React.FC = () => {
     window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
-      clearInterval(interval);
       window.removeEventListener('beforeunload', handleBeforeUnload);
       // Garante que ao desmontar o componente, o usuário seja removido
       handleBeforeUnload();
@@ -58,10 +48,13 @@ const FooterComponent: React.FC = () => {
 
           {/* Nossas Redes Sociais */}
           <div className="flex flex-col items-center lg:items-start">
-            <img
+            {/* Usando o componente Image de Next.js */}
+            <Image
               src="https://via.placeholder.com/190x92"
               alt="Banner Placeholder"
-              className="w-[190px] h-[92px] mb-4"
+              width={190}
+              height={92}
+              className="mb-4"
             />
             <h2 className="text-lg font-extrabold mb-2">Nossas Redes Sociais</h2>
             <div className="flex space-x-3">
