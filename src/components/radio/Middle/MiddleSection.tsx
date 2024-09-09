@@ -79,8 +79,8 @@ const MiddleSection = () => {
           </div>
         </div>
 
-        {/* Contact Section - Reduced height with controlled overflow and border-radius */}
-        <div className="relative bg-gradient-to-r from-red-500 to-red-600 px-4 py-2 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg max-h-[350px] mt-24">
+        {/* Contact Section - Adjusted width by moving slightly more to the left */}
+        <div className="relative bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-2 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg max-h-[350px] mt-16 ml-[-10px]">
           <h2 className="text-3xl font-extrabold mb-2 text-white">Nosso Contato</h2>
           <p className="text-lg mb-1 text-white">Nosso Whatsapp</p>
           <p className="text-2xl font-bold mb-2 text-white">(82) 9.9911-2619</p>
@@ -102,8 +102,8 @@ const MiddleSection = () => {
           </div>
 
           {/* Decorative Elements */}
-          <div className="absolute -top-5 -left-5 w-20 h-20 bg-red-600 rounded-full blur-2xl opacity-70 z-0"></div> 
-          <div className="absolute bottom-0 right-0 w-24 h-24 bg-red-600 rounded-full blur-2xl opacity-50 z-0"></div> 
+          <div className="absolute -top-5 -left-5 w-20 h-20 bg-blue-600 rounded-full blur-2xl opacity-70 z-0"></div> 
+          <div className="absolute bottom-0 right-0 w-24 h-24 bg-blue-600 rounded-full blur-2xl opacity-50 z-0"></div> 
         </div>
       </div>
     </div>
