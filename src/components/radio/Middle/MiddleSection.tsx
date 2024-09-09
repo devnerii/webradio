@@ -79,14 +79,14 @@ const MiddleSection = () => {
           </div>
         </div>
 
-        {/* Contact Section - Reduced to occupy fewer columns and slightly expanded to the left with border-radius */}
-        <div className="relative bg-gradient-to-r from-red-500 to-red-600 p-6 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 ml-[-10px] rounded-l-lg">
-          <h2 className="text-3xl font-extrabold mb-4 text-white">Nosso Contato</h2>
-          <p className="text-lg mb-2 text-white">Nosso Whatsapp</p>
-          <p className="text-2xl font-bold mb-6 text-white">(82) 9.9911-2619</p>
+        {/* Contact Section - Reduced height with controlled overflow and border-radius */}
+        <div className="relative bg-gradient-to-r from-red-500 to-red-600 px-4 py-2 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg max-h-[350px] mt-24">
+          <h2 className="text-3xl font-extrabold mb-2 text-white">Nosso Contato</h2>
+          <p className="text-lg mb-1 text-white">Nosso Whatsapp</p>
+          <p className="text-2xl font-bold mb-2 text-white">(82) 9.9911-2619</p>
 
           {/* Social media icons */}
-          <div className="flex justify-center space-x-6 mb-4">
+          <div className="flex justify-center space-x-4 mb-2">
             <a href="https://instagram.com" className="text-white transform hover:scale-125 transition-transform duration-300">
               <FaInstagram size={28} />
             </a>
@@ -102,8 +102,8 @@ const MiddleSection = () => {
           </div>
 
           {/* Decorative Elements */}
-          <div className="absolute -top-10 -left-10 w-32 h-32 bg-red-600 rounded-full blur-2xl opacity-70 z-0"></div> 
-          <div className="absolute bottom-0 right-0 w-36 h-36 bg-red-600 rounded-full blur-2xl opacity-50 z-0"></div> 
+          <div className="absolute -top-5 -left-5 w-20 h-20 bg-red-600 rounded-full blur-2xl opacity-70 z-0"></div> 
+          <div className="absolute bottom-0 right-0 w-24 h-24 bg-red-600 rounded-full blur-2xl opacity-50 z-0"></div> 
         </div>
       </div>
     </div>
