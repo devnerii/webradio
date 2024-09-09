@@ -9,68 +9,81 @@ import 'slick-carousel/slick/slick-theme.css';
 const AdSectionComponent: React.FC = () => {
   const ads = [
     {
-      title: "", // Campo de título adicionado
-      description: "", // Campo de descrição adicionado
+      title: "",
+      description: "",
       imgSrcs: [
         "https://via.placeholder.com/1920x1080?text=An%C3%BAncio+Moda+1",
         "https://via.placeholder.com/1920x1080?text=An%C3%BAncio+Moda+2",
         "https://via.placeholder.com/1920x1080?text=An%C3%BAncio+Moda+3"
       ],
       link: "#",
-      cta: "Compre Agora"
+      cta: "Compre Agora",
+      hideArrows: true,    // Variável para controlar visibilidade das setas
+      hideCtaButton: true, // Variável para controlar visibilidade do botão de CTA
+      hideInfoIcon: true   // Variável para controlar visibilidade do ícone de informações
     },
     {
-      title: "", // Campo de título adicionado
-      description: "", // Campo de descrição adicionado
+      title: "",
+      description: "",
       imgSrcs: [
         "https://via.placeholder.com/1920x1080?text=An%C3%BAncio+Viagem+1",
         "https://via.placeholder.com/1920x1080?text=An%C3%BAncio+Viagem+2",
         "https://via.placeholder.com/1920x1080?text=An%C3%BAncio+Viagem+3"
       ],
       link: "#",
-      cta: "Saiba Mais"
+      cta: "Saiba Mais",
+      hideArrows: true,
+      hideCtaButton: true,
+      hideInfoIcon: true
     },
     {
-      title: "", // Campo de título adicionado
-      description: "", // Campo de descrição adicionado
+      title: "",
+      description: "",
       imgSrcs: [
         "https://via.placeholder.com/600x300?text=An%C3%BAncio+Tecnologia+1",
         "https://via.placeholder.com/600x300?text=An%C3%BAncio+Tecnologia+2",
         "https://via.placeholder.com/600x300?text=An%C3%BAncio+Tecnologia+3"
       ],
       link: "#",
-      cta: "Veja Agora"
+      cta: "Veja Agora",
+      hideArrows: true,
+      hideCtaButton: true,
+      hideInfoIcon: true
     },
     {
-      title: "", // Campo de título adicionado
-      description: "", // Campo de descrição adicionado
+      title: "",
+      description: "",
       imgSrcs: [
         "https://via.placeholder.com/600x300?text=An%C3%BAncio+Esporte+1",
         "https://via.placeholder.com/600x300?text=An%C3%BAncio+Esporte+2",
         "https://via.placeholder.com/600x300?text=An%C3%BAncio+Esporte+3"
       ],
       link: "#",
-      cta: "Descubra"
+      cta: "Descubra",
+      hideArrows: true,
+      hideCtaButton: true,
+      hideInfoIcon: true
     }
   ];
 
-  const sliderSettings = {
+  const sliderSettings = (hideArrows: boolean) => ({
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 9000, // Cada slide ficará visível por 9 segundos
+    autoplaySpeed: 3000,
+    arrows: !hideArrows, // Controla a visibilidade das setas
     responsive: [
       {
-        breakpoint: 768, // Em dispositivos móveis
+        breakpoint: 768,
         settings: {
-          autoplaySpeed: 12000 // Mais lento em dispositivos móveis (12 segundos)
+          autoplaySpeed: 4000
         }
       }
     ]
-  };
+  });
 
   return (
     <div className="w-full px-4 py-12">
@@ -78,7 +91,7 @@ const AdSectionComponent: React.FC = () => {
         {ads.map((ad, index) => (
           <div key={index} className="relative group bg-white text-white p-8 rounded-lg shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500 h-80 lg:h-[50vh]">
             <div className="absolute inset-0 z-0">
-              <Slider {...sliderSettings}>
+              <Slider {...sliderSettings(ad.hideArrows)}>
                 {ad.imgSrcs.map((imgSrc, i) => (
                   <div key={i} className="relative h-80 lg:h-[50vh]"> 
                     <Image 
@@ -95,24 +108,27 @@ const AdSectionComponent: React.FC = () => {
             </div>
             <div className="relative z-10 flex flex-col justify-between h-full">
               <div>
-                {/* Exibe título e descrição, mesmo se estiverem vazios */}
                 <h2 className="text-2xl font-bold text-red-600 mb-4">{ad.title}</h2>
                 <p className="text-lg text-red-600 mb-8">{ad.description}</p>
               </div>
               <div className="flex items-center space-x-4">
-                <a 
-                  href={ad.link} 
-                  aria-label={`Link para ${ad.cta}`} 
-                  className="inline-block bg-red-600 py-2 px-4 lg:py-3 lg:px-6 rounded-full text-white font-bold uppercase transform hover:scale-110 transition-transform duration-300"
-                >
-                  {ad.cta} <FaArrowRight className="ml-2 inline" />
-                </a>
-                <button 
-                  aria-label="Mais informações" 
-                  className="inline-flex items-center justify-center bg-white text-red-600 p-3 rounded-full shadow-lg hover:bg-red-100 transform hover:scale-110 transition-transform duration-300"
-                >
-                  <FaInfoCircle size={20} />
-                </button>
+                {!ad.hideCtaButton && ( // Condicional para exibir ou não o botão de CTA
+                  <a 
+                    href={ad.link} 
+                    aria-label={`Link para ${ad.cta}`} 
+                    className="inline-block bg-red-600 py-2 px-4 lg:py-3 lg:px-6 rounded-full text-white font-bold uppercase transform hover:scale-110 transition-transform duration-300"
+                  >
+                    {ad.cta} <FaArrowRight className="ml-2 inline" />
+                  </a>
+                )}
+                {!ad.hideInfoIcon && ( // Condicional para exibir ou não o ícone de informações
+                  <button 
+                    aria-label="Mais informações" 
+                    className="inline-flex items-center justify-center bg-white text-red-600 p-3 rounded-full shadow-lg hover:bg-red-100 transform hover:scale-110 transition-transform duration-300"
+                  >
+                    <FaInfoCircle size={20} />
+                  </button>
+                )}
               </div>
             </div>
           </div>

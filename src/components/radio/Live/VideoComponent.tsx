@@ -26,7 +26,7 @@ const VideoComponent: React.FC = () => {
 
   return (
     <div className="w-full bg-white shadow-xl rounded-md hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-      <div className="flex items-center justify-between bg-gradient-to-r from-yellow-600 to-yellow-400 text-white p-2 rounded-t-md shadow-md">
+      <div className="flex items-center justify-between bg-gradient-to-r from-yellow-400 to-yellow-400 text-white p-2 rounded-t-md shadow-md">
         <span className="font-semibold text-lg flex items-center"><FaBroadcastTower className="mr-2"/>AO VIVO</span>
         <span className="text-sm">{dateTime}</span>
       </div>

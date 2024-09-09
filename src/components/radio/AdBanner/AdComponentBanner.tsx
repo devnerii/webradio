@@ -9,13 +9,21 @@ const AdBannerComponent: React.FC = () => {
       title: "",
       description: "",
       imgSrc: "https://via.placeholder.com/800x400?text=An%C3%BAncio+Banner+1",
-      link: "#"
+      link: "#",
+      hideTitle: false, // Variável para controlar visibilidade do título
+      hideDescription: false, // Variável para controlar visibilidade da descrição
+      hideCtaButton: true, // Variável para controlar visibilidade do botão "Saiba Mais"
+      hidePlayButton: true, // Variável para controlar visibilidade do botão "Play"
     },
     {
       title: "",
       description: "",
       imgSrc: "https://via.placeholder.com/800x400?text=An%C3%BAncio+Banner+2",
-      link: "#"
+      link: "#",
+      hideTitle: true,
+      hideDescription: true,
+      hideCtaButton: true,
+      hidePlayButton: true,
     },
   ];
 
@@ -33,16 +41,28 @@ const AdBannerComponent: React.FC = () => {
             </div>
             <div className="relative flex flex-col justify-between h-full z-10">
               <div>
-                <h2 className="text-4xl font-extrabold mb-4" style={{ color: '#FF0000' }}>{banner.title}</h2>
-                <p className="text-lg mb-8" style={{ color: '#FF0000' }}>{banner.description}</p>
+                {!banner.hideTitle && (
+                  <h2 className="text-4xl font-extrabold mb-4" style={{ color: '#FF0000' }}>
+                    {banner.title}
+                  </h2>
+                )}
+                {!banner.hideDescription && (
+                  <p className="text-lg mb-8" style={{ color: '#FF0000' }}>
+                    {banner.description}
+                  </p>
+                )}
               </div>
               <div className="flex items-center space-x-4">
-                <a href={banner.link} className="inline-block bg-[#FF0000] text-white py-3 px-6 rounded-full font-bold uppercase">
-                  Saiba Mais <FaArrowRight className="ml-2 inline" />
-                </a>
-                <button className="inline-flex items-center justify-center bg-[#FF0000] text-white p-3 rounded-full shadow-lg">
-                  <FaPlay size={20} />
-                </button>
+                {!banner.hideCtaButton && (
+                  <a href={banner.link} className="inline-block bg-[#FF0000] text-white py-3 px-6 rounded-full font-bold uppercase">
+                    Saiba Mais <FaArrowRight className="ml-2 inline" />
+                  </a>
+                )}
+                {!banner.hidePlayButton && (
+                  <button className="inline-flex items-center justify-center bg-[#FF0000] text-white p-3 rounded-full shadow-lg">
+                    <FaPlay size={20} />
+                  </button>
+                )}
               </div>
             </div>
           </div>
