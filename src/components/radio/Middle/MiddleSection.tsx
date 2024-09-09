@@ -1,7 +1,7 @@
 // components/MiddleSection.tsx
 import React from 'react';
 import Image from 'next/image';
-import { FaPhoneAlt, FaInstagram, FaFacebookF, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter } from 'react-icons/fa';
 
 const MiddleSection = () => {
   const newsItems = [
@@ -62,7 +62,9 @@ const MiddleSection = () => {
         
         {/* News Section - Expanded to occupy more columns */}
         <div className="relative bg-white p-3 shadow-md overflow-hidden group md:col-span-3 z-10 rounded-lg">
-          <h2 className="text-3xl font-extrabold mb-3 text-red-600 group-hover:underline group-hover:text-red-800 transition-all duration-300">Últimas Notícias</h2>
+          <h2 className="text-3xl font-extrabold mb-3 text-red-600 group-hover:underline group-hover:text-red-800 transition-all duration-300 text-center">
+            <span className="inline-block">Últimas </span><span className="inline-block">Notícias</span>
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mx-0 px-0"> 
             {newsItems.slice(0, 8).map((item, index) => (
               <div key={index} className="group bg-gray-100 p-2 rounded-md shadow-sm transform hover:scale-105 hover:shadow-md transition-transform duration-500 relative"> 
@@ -79,31 +81,44 @@ const MiddleSection = () => {
           </div>
         </div>
 
-        {/* Contact Section - Adjusted width by moving slightly more to the left */}
-        <div className="relative bg-gradient-to-r from-red-500 to-red-600 px-4 py-2 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg max-h-[350px] mt-16 ml-[-10px]">
-          <h2 className="text-3xl font-extrabold mb-2 text-white">Nosso Contato</h2>
-          <p className="text-lg mb-1 text-white">Nosso Whatsapp</p>
-          <p className="text-2xl font-bold mb-2 text-white">(82) 9.9911-2619</p>
+        {/* Contact Section */}
+        <div>
+          {/* Primeiro "Nosso Contato" */}
+          <div className="relative bg-gradient-to-r from-red-500 to-red-600 px-4 py-2 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg max-h-[200px] mt-16 ml-[-10px]">
+            <h2 className="text-3xl font-extrabold mb-2 text-white">Nosso Contato</h2>
+            <p className="text-lg mb-1 text-white">Nosso Whatsapp</p>
+            <p className="text-2xl font-bold mb-2 text-white">(82) 9.9911-2619</p>
 
-          {/* Social media icons */}
-          <div className="flex justify-center space-x-4 mb-2">
-            <a href="https://instagram.com" className="text-white transform hover:scale-125 transition-transform duration-300">
-              <FaInstagram size={28} />
-            </a>
-            <a href="https://facebook.com" className="text-white transform hover:scale-125 transition-transform duration-300">
-              <FaFacebookF size={28} />
-            </a>
-            <a href="https://youtube.com" className="text-white transform hover:scale-125 transition-transform duration-300">
-              <FaYoutube size={28} />
-            </a>
-            <a href="https://twitter.com" className="text-white transform hover:scale-125 transition-transform duration-300">
-              <FaTwitter size={28} />
-            </a>
+            {/* Social media icons */}
+            <div className="flex justify-center space-x-4 mb-2">
+              <a href="https://instagram.com" className="text-white transform hover:scale-125 transition-transform duration-300">
+                <FaInstagram size={28} />
+              </a>
+              <a href="https://facebook.com" className="text-white transform hover:scale-125 transition-transform duration-300">
+                <FaFacebookF size={28} />
+              </a>
+              <a href="https://youtube.com" className="text-white transform hover:scale-125 transition-transform duration-300">
+                <FaYoutube size={28} />
+              </a>
+              <a href="https://twitter.com" className="text-white transform hover:scale-125 transition-transform duration-300">
+                <FaTwitter size={28} />
+              </a>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -top-5 -left-5 w-20 h-20 bg-red-600 rounded-full blur-2xl opacity-70 z-0"></div> 
+            <div className="absolute bottom-0 right-0 w-24 h-24 bg-red-600 rounded-full blur-2xl opacity-50 z-0"></div> 
           </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute -top-5 -left-5 w-20 h-20 bg-red-600 rounded-full blur-2xl opacity-70 z-0"></div> 
-          <div className="absolute bottom-0 right-0 w-24 h-24 bg-red-600 rounded-full blur-2xl opacity-50 z-0"></div> 
+          {/* Segundo elemento com background de "Anuncie aqui", mesmo tamanho do "Nosso Contato" */}
+          <div className="relative bg-cover bg-center shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg h-40 max-h-[200px] mt-4 ml-[-10px]" 
+               style={{ backgroundImage: "url('https://via.placeholder.com/400x200?text=Anuncie+Aqui')" }}>
+          </div>
+
+          {/* Terceiro elemento com background de "Anuncie aqui", mesmo tamanho do "Nosso Contato" */}
+          <div className="relative bg-cover bg-center shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg max-h-[200px] h-40 mt-4 ml-[-10px]" 
+               style={{ backgroundImage: "url('https://via.placeholder.com/400x200?text=Anuncie+Aqui')" }}>
+          </div>
         </div>
       </div>
     </div>
