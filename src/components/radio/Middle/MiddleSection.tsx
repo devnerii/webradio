@@ -80,7 +80,7 @@ const MiddleSection = () => {
         </div>
 
         {/* Contact Section - Reduced to occupy fewer columns and slightly expanded to the left with border-radius */}
-        <div className="relative bg-gradient-to-r from-red-400 to-red-600 p-6 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 ml-[-10px] rounded-l-lg">
+        <div className="relative bg-gradient-to-r from-red-500 to-red-600 p-6 shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 ml-[-10px] rounded-l-lg">
           <h2 className="text-3xl font-extrabold mb-4 text-white">Nosso Contato</h2>
           <p className="text-lg mb-2 text-white">Nosso Whatsapp</p>
           <p className="text-2xl font-bold mb-6 text-white">(82) 9.9911-2619</p>
