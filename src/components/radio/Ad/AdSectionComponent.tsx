@@ -87,6 +87,7 @@ const AdSectionComponent: React.FC = () => {
 
   return (
     <div className="w-full px-4 py-12">
+      <h2 className="text-5xl font-extrabold text-red-600 mb-10 text-center">Nossos Parceiros</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {ads.map((ad, index) => (
           <div key={index} className="relative group bg-white text-white p-8 rounded-lg shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500 h-40">
