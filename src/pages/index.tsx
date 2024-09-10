@@ -10,6 +10,7 @@ import VideoGalleryComponent from '@/components/radio/Videos/VideoGalleryCompone
 import AdSectionComponent from '@/components/radio/Ad/AdSectionComponent';
 import PhotoGalleryComponent from '@/components/radio/Images/PhotoGalleryComponent';
 import FooterComponent from '@/components/radio/Footer/FooterComponent';
+import BannerRodape from '@/components/radio/AdBannerRodape/BannerRodape';
 
 const HomePage = () => {
   return (
@@ -24,6 +25,7 @@ const HomePage = () => {
       <VideoGalleryComponent />
       <AdSectionComponent />
       <PhotoGalleryComponent />
+      <BannerRodape />
       <FooterComponent />
     </div>
   );

@@ -63,7 +63,7 @@ const MiddleSection = () => {
         {/* News Section - Expanded to occupy more columns */}
         <div className="relative bg-white p-3 shadow-md overflow-hidden group md:col-span-3 z-10 rounded-lg">
           <h2 className="text-3xl font-extrabold mb-3 text-red-600 group-hover:underline group-hover:text-red-800 transition-all duration-300 text-center">
-            <span className="inline-block">Últimas </span><span className="inline-block">Notícias</span>
+            <span className="inline-block">Últimas Notícias</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mx-0 px-0"> 
             {newsItems.slice(0, 8).map((item, index) => (
@@ -112,12 +112,12 @@ const MiddleSection = () => {
 
           {/* Segundo elemento com background de "Anuncie aqui", mesmo tamanho do "Nosso Contato" */}
           <div className="relative bg-cover bg-center shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg h-40 max-h-[200px] mt-4 ml-[-10px]" 
-               style={{ backgroundImage: "url('https://via.placeholder.com/400x200?text=Anuncie+Aqui')" }}>
+               style={{ backgroundImage: "url('/radio/400x200.png')" }}>
           </div>
 
           {/* Terceiro elemento com background de "Anuncie aqui", mesmo tamanho do "Nosso Contato" */}
           <div className="relative bg-cover bg-center shadow-md text-center overflow-hidden group flex flex-col justify-center items-center z-10 md:col-span-1 rounded-lg max-h-[200px] h-40 mt-4 ml-[-10px]" 
-               style={{ backgroundImage: "url('https://via.placeholder.com/400x200?text=Anuncie+Aqui')" }}>
+               style={{ backgroundImage: "url('/radio/400x200.png')" }}>
           </div>
         </div>
       </div>

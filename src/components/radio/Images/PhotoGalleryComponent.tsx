@@ -48,12 +48,12 @@ const PhotoGalleryComponent: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="w-full px-4 py-12"> {/* Mantém o espaçamento lateral pequeno */}
       <h2 className="text-5xl font-extrabold text-red-600 mb-10 text-center">Galeria de Fotos</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Espaçamento restaurado entre os itens */}
         {photos.map((photo, index) => (
           <div key={index} className="relative group rounded-lg shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
-            <div className="relative w-full h-56"> {/* Reduzindo o tamanho das fotos */}
+            <div className="relative w-full h-56"> 
               <Image 
                 src={photo.imgSrc} 
                 alt={photo.title} 
@@ -72,7 +72,6 @@ const PhotoGalleryComponent: React.FC = () => {
               <h3 className="text-xl font-bold text-gray-800 group-hover:text-red-600 transition-colors duration-300">{photo.title}</h3>
               <p className="text-gray-600 mt-2">{photo.description}</p>
             </div>
-            {/* Atualizando os efeitos de destaque de azul para vermelho */}
             <div className="absolute -bottom-5 -left-5 w-16 h-16 bg-red-300 rounded-full blur-2xl opacity-50"></div>
             <div className="absolute -top-5 -right-5 w-24 h-24 bg-red-400 rounded-full blur-3xl opacity-40"></div>
           </div>
