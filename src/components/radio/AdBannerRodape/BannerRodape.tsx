@@ -49,6 +49,7 @@ const BannerRodape: React.FC = () => {
 
   return (
     <div className="w-full mx-0 px-4 py-12">
+      <h2 className="text-5xl font-extrabold text-red-600 mb-10 text-center">Nossos Parceiros</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {banners.map((banner, index) => (
           <div
