@@ -14,10 +14,6 @@ const Painel = () => {
     }
   }, [status, router]); // Inclui 'router' na lista de dependências
 
-  if (status === 'loading') {
-    return <p>Carregando...</p>;
-  }
-
   return (
     <div>
       <h1>Bem-vindo ao Painel, {session?.user?.nome}</h1>
