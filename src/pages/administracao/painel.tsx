@@ -1,26 +1,29 @@
-// pages/administracao/painel.tsx
-import { GetServerSideProps } from 'next';
-import { getSession } from 'next-auth/react';
+// src/pages/administracao/painel.tsx
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/administracao/login',
-        permanent: false,
-      },
-    };
+const Painel = () => {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      router.push('/administracao/login');
+    }
+  }, [status, router]); // Inclui 'router' na lista de dependências
+
+  if (status === 'loading') {
+    return <p>Carregando...</p>;
   }
 
-  return {
-    props: { session },
-  };
+  return (
+    <div>
+      <h1>Bem-vindo ao Painel, {session?.user?.nome}</h1>
+      {/* Conteúdo do painel */}
+    </div>
+  );
 };
 
-const PainelPage = () => {
-  return <div>Painel Admin</div>;
-};
-
-export default PainelPage;
+export default Painel;

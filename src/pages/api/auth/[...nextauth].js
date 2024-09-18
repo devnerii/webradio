@@ -1,3 +1,4 @@
+// src/pages/api/auth/[...nextauth].js
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
@@ -6,21 +7,33 @@ export default NextAuth({
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
-        usuario: { label: 'usuario', type: 'text' },
-        password: { label: 'senha', type: 'password' }
+        usuario: { label: 'Usuário', type: 'text', placeholder: 'Seu usuário' },
+        password: { label: 'Senha', type: 'password' }
       },
       async authorize(credentials) {
-        const res = await fetch("http://localhost:3000/api/login", {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(credentials)
-        });
+        try {
+          const res = await fetch(`${process.env.NEXTAUTH_URL}/api/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              usuario: credentials.usuario,
+              password: credentials.password
+            })
+          });
 
-        const user = await res.json();
-        if (res.ok && user) {
-          return user;
+          if (!res.ok) {
+            return null;
+          }
+
+          const user = await res.json();
+
+          if (user) {
+            return user;
+          }
+          return null;
+        } catch (error) {
+          return null;
         }
-        return null;
       }
     })
   ],
@@ -28,19 +41,28 @@ export default NextAuth({
     strategy: 'jwt',  // Usar JWT para a estratégia de sessão
   },
   callbacks: {
-    async session({ session, token }) {
-      session.user = token;
-      return session;
-    },
     async jwt({ token, user }) {
       if (user) {
-        token.user = user;
+        token.user = {
+          id: user.id,
+          usuario: user.usuario,
+          nome: user.nome,
+          role: user.role
+        };
       }
       return token;
+    },
+    async session({ session, token }) {
+      if (token && token.user) {
+        session.user = token.user;
+      }
+      return session;
     }
   },
-  secret: process.env.NEXTAUTH_SECRET,  // Aqui você usa a variável de ambiente NEXTAUTH_SECRET
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: '/administracao/login'
-  }
+    signIn: '/administracao/login',
+    error: '/administracao/login', // Redirecionar para a página de login em caso de erro
+  },
+  debug: false, // Desative o modo de depuração em produção
 });
